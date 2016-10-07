@@ -1,0 +1,59 @@
+\documentclass[12pt]{article}
+
+\usepackage{cmap}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+\usepackage{amsthm,amsmath,amssymb}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{xcolor}
+
+\definecolor{brightblue}{RGB}{29, 172, 214}
+
+\usepackage[russian,colorlinks=true,urlcolor=brightblue,linkcolor=blue]{hyperref}
+\usepackage{enumerate}
+\usepackage{datetime}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\input code-format.tex
+
+\newcommand{\javacode}[1]{
+  \lstset{style=java-style}
+  \lstinputlisting[language=Java]{#1}
+}
+
+\newcommand{\xmlcode}[1]{
+  \lstset{style=xml-style}
+  \lstinputlisting[language=XML]{#1}
+}
+
+\newcommand{\image}[2]{
+\begin{figure}[h!]
+ \centering
+  \includegraphics[width=1\textwidth]{#1}
+ \caption{#2}
+\end{figure}
+}
+
+\begin{document}
+
+% ссылка{URL}{текст}
+\href{http://mit.spbau.ru/sewiki/index.php/SE_Wiki}{SE Wiki}
+
+% изображение{имя файла}{текст}
+\image{example/studio_example.png}{Картиночка}
+
+% Java код{имя файла}
+\javacode{example/example.java}
+
+\pagebreak
+
+% XML код{имя файла}
+\xmlcode{example/example.xml}
+
+\end{document}
