@@ -20,6 +20,7 @@
 \usepackage{tikz}
 \usepackage{pgfplots}
 \usepackage[export]{adjustbox}
+\usepackage{float}
 
 \input code-format.tex
 
@@ -34,7 +35,7 @@
 }
 
 \newcommand{\image}[2]{
-  \begin{figure}[h!]
+  \begin{figure}[H]
    \centering
     \includegraphics[max size={\textwidth}{\textheight}]{#1}
    \caption{#2}
