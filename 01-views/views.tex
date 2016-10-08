@@ -1,1 +1,19 @@
+\newcommand{\View}{
+  \href{https://developer.android.com/reference/android/view/View.html}{View}
+}
+
+\newcommand{\ViewGroup}{
+  \href{https://developer.android.com/reference/android/view/ViewGroup.html}{ViewGroup}
+}
+
 \Section{View и ViewGroup}
+
+\Subsection{Пользовательский интерфейс}
+
+В приложении под Android все элементы пользовательского интерфейса
+(англ. User Interface, UI) строятся на основе \View и \ViewGroup объектов.
+\View -- это объект, который рисует что-то, с чем пользователь может
+взаимодействовать, на экране. \ViewGroup -- это объект, который содержит внутри
+себя другие \View (и \ViewGroup) объекты, и таким образом определяет, как будет
+выглядеть интерфейс.
+\image{01-views/viewgroup.png}{Пример иерархии, которая определяет UI}
