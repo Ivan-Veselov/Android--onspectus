@@ -6,6 +6,14 @@
   \href{https://developer.android.com/reference/android/view/ViewGroup.html}{ViewGroup}
 }
 
+\newcommand{\AdapterView}{
+  \href{https://developer.android.com/reference/android/widget/AdapterView.html}{AdapterView}
+}
+
+\newcommand{\Adapter}{
+  \href{https://developer.android.com/reference/android/widget/Adapter.html}{Adapter}
+}
+
 \Section{Макеты (Layouts)}
 
 \Subsection{Макет}
@@ -31,13 +39,13 @@ layout можно двумя способами:
 Каждый подкласс класса \ViewGroup предоставляет уникальный способ для
 отображения \View, которые он содержит внутри.
 
-\textbf{Замечание:} Хотя и можно помещть один layout в другой, чтобы добиться
+\textbf{Замечание:} Хотя и можно помещать один layout в другой, чтобы добиться
 желаемого внешнего вида, не стоит этим злоупотреблять. Следует стараться
 сделать иерархию как можно меньше. Layout рисуется быстрее, если у него мало
 вложенных layout (широкая иерархия лучше, чем глубокая).
 
-Вот некоторые наиболее часто используемые виды layout, которые встроены в
-платформу Android:
+Вот некоторые наиболее часто используемые виды layout, которые предоставляются
+платформой Android:
 \begin{itemize}
   \item \textbf{Linear Layout}. Layout, который распологает свои дочернии \View
   в один горизонтальный или вертикальный ряд. Он создает scrollbar (прокрутку),
@@ -50,7 +58,7 @@ layout можно двумя способами:
   \item \textbf{Web View}. Отображает web-страницы.
 \end{itemize}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
 \minipage{0.32\textwidth}
   \includegraphics[width=\linewidth]{02-layouts/linearlayout.png}
   \caption{Linear Layout}
@@ -59,9 +67,39 @@ layout можно двумя способами:
   \includegraphics[width=\linewidth]{02-layouts/relativelayout.png}
   \caption{Relative Layout}
 \endminipage\hfill
-\minipage{0.32\textwidth}
+\minipage{0.32\textwidth}%
   \includegraphics[width=\linewidth]{02-layouts/webview.png}
   \caption{Web View}
 \endminipage
 \end{figure}
+
+\Subsection{Создание макета через Adapter}
+
+Когда содержимое layout динамически изменяется или заранее не известно, можно
+использовать layout, который является подклассом \AdapterView, чтобы заполнять
+layout различными \View во время выполнения. Подклассы класса \AdapterView
+используют \Adapter, чтобы привязать данные к layout. \Adapter выступает в роли
+посредника между источником данных и \AdapterView -- \Adapter получает данные
+(из таких источников как массив или база данных) и конвертирует каждую запись
+во \View, который может быть добавлен в layout \AdapterView.
+
+Некоторые типичные layout, которые создаются с помощью \Adapter:
+\begin{itemize}
+  \item \textbf{List View}. Отображает прокручиваемую колонку.
+  
+  \item \textbf{Grid View}. Отображает прокручиваемую таблицу.
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\minipage{0.32\textwidth}
+  \includegraphics[width=\linewidth]{02-layouts/listview.png}
+  \caption{List View}
+\endminipage\hspace{1cm}
+\minipage{0.32\textwidth}
+  \includegraphics[width=\linewidth]{02-layouts/gridview.png}
+  \caption{Grid View}
+\endminipage\hfill
+\end{figure}
+
 
