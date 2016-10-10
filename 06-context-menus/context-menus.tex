@@ -4,24 +4,29 @@
 
     Контекстное меню создается при долгом нажати на экран.
 
-    \includegraphics[scale=0.5]{06-context-menus/Screenshot.png}
+    \includegraphics[scale=0.3]{06-context-menus/Screenshot.png}
     
 \Subsection{Создание контекстного меню}\\
 
     Чтобы создать контестное меню, нужно в классе, соответвующем текущей Activity: 
     
     \begin{itemize}
-        \item Вызвать метод registerForContextMenu(view$\_$i);
+        \item Вызвать метод registerForContextMenu(View view$\_$i);
     
         Хотим чтобы появлялось контекстное меню при долгом нажати на view$\_$i.
     
         \item Создать обработчик onCreateContextMenu, который будет вызываться каждый при открытии контекстного меню.
     
         void onCreateContextMenu(android.view.ContextMenu menu, view$\_$i, ContextMenuInfo menuInfo);
+        
+        где, 
+        \begin{itemize}
+            \item menu -- то, куда добавим пункты.
+            
+            оно при каждом вызове onCreateContextMenu новое. 
     
-        menu -- то, куда добавим пункты, оно при каждом вызове onCreateContextMenu новое. 
-    
-        view$\_$i -- элемнт экрана, для которого вызвалось контекстное меню.
+            \item view$\_$i -- элемент экрана, для которого вызвалось контекстное меню.
+        \end{itemize}
     \end{itemize}
 
     \javacode{06-context-menus/onCreateContextMenu.java}
