@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="default_history">
+        <item>2*3=6</item>
+        <item>3*3=9</item>
+        <item>11*11=121</item>
+        <item>32*32=1024</item>
+    </string-array>
+</resources>
